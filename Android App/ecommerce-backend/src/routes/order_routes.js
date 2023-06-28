@@ -1,0 +1,9 @@
+//thiết lập các đường dẫn để xử lý các yêu cầu của order_controller
+const OrderRoutes = require('express').Router();
+const OrderController = require('./../controllers/order_controller');
+
+OrderRoutes.get("/:userId", OrderController.fetchOrdersForUser);
+OrderRoutes.post("/", OrderController.createOrder);
+OrderRoutes.put("/updateStatus", OrderController.updateOrderStatus);
+
+module.exports = OrderRoutes;
